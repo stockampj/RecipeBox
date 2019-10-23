@@ -1,3 +1,36 @@
 @{
     Layout = "_Layout";
 }
+
+@model RecipeBox.Models.Recipe
+
+<h4>Edit Recipe</h4>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.RecipeId)
+
+    @Html.LabelFor(model => model.Name)
+    @Html.EditorFor(model => model.Name)
+
+    @Html.LabelFor(model => model.Description)
+    @Html.EditorFor(model => model.Description)
+    <p>You will add your ingredients on the next page</p>
+
+    @Html.LabelFor(model => model.Instructions)
+    @Html.EditorFor(model => model.Instructions)
+
+    @Html.LabelFor(model => model.Rating)
+    <select id="Rating" name="Rating">
+        <option value="1"><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></option>
+        <option value="2"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></option>
+        <option value="3"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></option>
+        <option value="4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></option>
+        <option value="5"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></option>
+    </select>
+
+    @Html.Label("Select Tag")
+    @Html.DropDownList("TagId")
+
+    <input type="submit" value="Add new item" class="btn btn-default" />
+}
