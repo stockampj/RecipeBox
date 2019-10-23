@@ -6,14 +6,14 @@
 @using System.Security.Claims
 @model IEnumerable<RecipeBox.Models.Recipe>
 
-<h1>Items for @User.Identity.Name</h1>
+<h4>Recipes for @User.Identity.Name</h4>
 
 @if (Model.Any())
 {
   <ul>
     @foreach (Recipe recipe in Model)
     {
-      <li>@Html.ActionLink($"{recipe.Description}", "Details", new { id = recipe.RecipeId })</li>
+      <li>@Html.ActionLink($"{recipe.Name}", "Details", new { id = recipe.RecipeId })</li>
     }
   </ul>
 } 
