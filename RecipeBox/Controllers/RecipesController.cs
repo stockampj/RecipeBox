@@ -51,7 +51,7 @@ namespace RecipeBox.Controllers
       {
         _db.TagRecipe.Add(new TagRecipe() {TagId = TagId, RecipeId = recipe.RecipeId});
       }
-            if (TagId != 0)
+      if (IngredientId != 0)
       {
         _db.IngredientRecipe.Add(new IngredientRecipe() {IngredientId = IngredientId, RecipeId = recipe.RecipeId});
       }
@@ -108,6 +108,25 @@ namespace RecipeBox.Controllers
       _db.Recipes.Remove(thisRecipe);
       _db.SaveChanges();
 
+      return RedirectToAction("Index");
+    }
+
+
+    public ActionResult AddTag(int id)
+    {
+      var thisRecipe = _db.Recipes.FirstOrDefault(recipe => recipe.RecipeId == id);
+      ViewBag.TagId = new SelectList(_db.Tags, "TagId", "Name");
+      return View(thisRecipe);
+    }
+
+    [HttpPost]
+    public ActionResult AddTag(Recipe recipe, int TagId)
+    {
+      if (TagId != 0)
+      {
+        _db.TagRecipe.Add(new TagRecipe() { TagId = TagId, RecipeId = recipe.RecipeId });
+      }
+      _db.SaveChanges();
       return RedirectToAction("Index");
     }
   }
