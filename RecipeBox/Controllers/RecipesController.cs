@@ -101,6 +101,14 @@ namespace RecipeBox.Controllers
       return RedirectToAction("Details");
     }
 
+    public ActionResult Delete(int id)
+    {
+      var thisRecipe = _db.Recipes.FirstOrDefault(recipe => recipe.RecipeId == id);
+      Console.WriteLine(id);
+      _db.Recipes.Remove(thisRecipe);
+      _db.SaveChanges();
 
+      return RedirectToAction("Index");
+    }
   }
 }
