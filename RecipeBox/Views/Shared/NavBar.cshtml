@@ -1,0 +1,41 @@
+<div id="navbar">
+  <p class="nav-p">
+
+    <span class="navbar-item">
+      <i class="fas fa-home"></i>
+      @Html.ActionLink("Home", "Index", "Home", null, new {@class="navbarLink"})
+    </span>
+    
+    <span class="navbar-item">|</span>
+
+    <span class="navbar-item">
+      <i class="fas fa-list-ul"></i>
+      @Html.ActionLink("Recipes", "Index", "Recipes", null, new {@class="navbarLink"}) 
+    </span>
+    <span class="navbar-item">
+      <i class="fas fa-user-plus"></i>
+      @Html.ActionLink("Add Recipe", "Create", "Recipes", null, new {@class="navbarLink"})  
+    </span>
+
+    <span class="navbar-item">|</span>
+
+    <span class="navbar-item">
+      <i class="fas fa-list-ul"></i>
+      @Html.ActionLink("Tags", "Index", "Tags", null, new {@class="navbarLink"}) 
+    </span>
+    <span class="navbar-item">
+      <i class="fas fa-user-plus"></i>
+      @Html.ActionLink("Add Tag", "Create", "Tags", null, new {@class="navbarLink"}) 
+    </span>
+
+    <span class="navbar-item">
+      <i class="fas fa-list-ul"></i>
+      @Html.ActionLink("Ingredients", "Index", "Ingredients", null, new {@class="navbarLink"}) 
+    </span>
+    <span class="navbar-item">
+      <i class="fas fa-user-plus"></i>
+      @Html.ActionLink("Add Ingredient", "Create", "Ingredients", null, new {@class="navbarLink"}) 
+    </span>
+    
+  </p>
+</div>

@@ -1,0 +1,49 @@
+@{
+  Layout = "_Layout";
+}
+
+@model RecipeBox.Models.Recipe
+
+@if(@Model.Tags.Count != 0)
+{
+  <ul>
+  @foreach(var join in Model.Tags)
+  {
+    <li>@join.Tag.Name</li>
+    @using (Html.BeginForm("DeleteTag", "Recipes"))
+    {
+      @Html.Hidden("joinId", @join.TagRecipeId)
+      <input type="submit" value="Delete"/>
+    }
+  }
+  </ul>
+}
+
+<h2>Recipe</h2>
+<hr />
+<h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name) @Html.DisplayFor(model => model.Rating)</h3>
+
+<p>@Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)</p>
+
+@if(@Model.Ingredients.Count != 0)
+{
+  <ul>
+  @foreach(var join in Model.Ingredients)
+  {
+    <li>@join.Ingredient.Name</li>
+    @using (Html.BeginForm("DeleteIngredient", "Recipes"))
+    {
+      @Html.Hidden("joinId", @join.IngredientRecipeId)
+      <input type="submit" value="Delete"/>
+    }
+  }
+  </ul>
+}
+
+<p>>@Html.DisplayNameFor(model => model.Instructions): @Html.DisplayFor(model => model.Instructions)</p>
+
+<p>@Html.ActionLink("Back to list", "Index")</p>
+<p>@Html.ActionLink("Edit Recipe", "Edit", new { id = Model.RecipeId })</p>
+<p>@Html.ActionLink("Add a Tag", "AddTag", new { id = Model.RecipeId })</p>
+<p>@Html.ActionLink("Add an Ingredient", "AddIngredient", new { id = Model.RecipeId })</p>
+<p>@Html.ActionLink("Delete Recipe", "Delete", new { id = Model.RecipeId })</p>

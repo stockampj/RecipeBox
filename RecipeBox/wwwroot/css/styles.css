@@ -1,0 +1,123 @@
+div#navbar {
+  position:fixed;
+  top:0px;
+  left:0px;
+  width:100%;
+  height:50px;
+  color:#CCCC;
+  background: rgb(255,255,255);
+  background: linear-gradient(90deg, rgba(255,255,255,0) 3%, rgba(78,78,78,.3) 15%, rgba(78,78,78,0.5) 49%, rgba(78,78,78,.3) 85%, rgba(255,255,255,0) 97%); 
+  border-bottom: thin solid rgba(255,255,255,.4);
+  padding: 5px;
+  overflow: hidden;
+}
+
+
+.nav-p {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 70%;
+  min-width: 600px;
+}
+
+.navbar-item {
+  display: inline-block;
+  padding-left: 20px;
+  color: rgba(255,255,255,.8);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.fas {
+  font-size: .8em;
+}
+
+.navbarLink {
+  color: rgba(255,255,255,.8);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+#navbar-spacer {
+  height: 50px;
+}
+
+#title-spacer{
+  height: 100px;
+}
+
+.page-title {
+  height: 100px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.page-title-font {
+  float: right;
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 5em;
+  text-shadow: 2px 2px 5px rgba(0,0,0,.3);
+  padding-right: 20px;
+}
+
+body {
+  /* background-image: url(../img/lights.jpg); */
+  background-color: darkgreen;
+  background-position-x: center;
+}
+
+
+label {
+  font-weight: 600;
+  font-size: 1.5em;
+  padding-right: 1.5em;
+}
+
+input {
+  box-shadow: 2px 2px 5px rgba(0,0,0,.3);
+}
+
+.form-input {
+  background-color: rgba(255,255,255,.3);
+  border: outset white;
+  border-width: .03em;
+  border-radius: .15em;
+  width: 100%;
+}
+
+select {
+  width: 100%;
+  background-color: rgba(255,255,255,.3);
+  font-size: 1.5em;
+  border: outset white;
+  border-width: .02em;
+  border-radius: .12em;
+  box-shadow: 2px 2px 5px rgba(0,0,0,.3);
+}
+
+.form-submit {
+  display: inline-block;
+  width: 45%;
+  height: 2.5em;
+  box-shadow: 2px 2px 5px rgba(0,0,0,.3);
+}
+
+.btn-warning {
+  background-color: rgb(243, 173, 94);
+  border: rgb(207, 139, 60);
+}
+
+.btn-warning:hover {
+  background-color: rgb(180, 131, 74);
+}
+
+a {
+  color: rgba(255,255,255,.8);
+}
+a:hover {
+  color: rgba(255,255,255,1);
+  text-decoration: none;
+  text-shadow: 2px 2px rgba(0,0,0,.1);
+}
